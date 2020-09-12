@@ -26,7 +26,7 @@ export default function () {
     <Router>
       <ToastProvider>
         <AuthProvider>
-          {/* <NavigationProviderxasas> */}
+          {/* <NavigationProvis> */}
           <App />
           {/* </NavigationProvider> */}
         </AuthProvider>
