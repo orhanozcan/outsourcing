@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+
 import { Loader, Dimmer } from 'semantic-ui-react'
 // import { NavigationProvider } from './contexts/navigation';
 import { AuthProvider, useAuth } from './contexts/auth';
@@ -14,23 +14,23 @@ function App() {
   if (loading) {
     return <Dimmer active   >< Loader /></Dimmer>;
   }
-
-  if (user) {
+  // console.log(user)
+  // if (user) {
     return <AuthenticatedContent />;
-  }
-  return <Content />;
+  // }
+  // return <Content />;
 }
 
 export default function () {
   return (
-    <Router>
-      <ToastProvider>
-        <AuthProvider>
-          {/* <NavigationProvis>asdasd */}
-          <App />
-          {/* </NavigationProvider> */}
-        </AuthProvider>
-      </ToastProvider>
-    </Router>
+    // <Router>
+    <ToastProvider>
+      <AuthProvider>
+        {/* <NavigationProvis>asdasd */}
+        <App />
+        {/* </NavigationProvider> */}
+      </AuthProvider>
+    </ToastProvider>
+    // </Router>
   );
 }

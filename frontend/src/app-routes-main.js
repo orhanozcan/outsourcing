@@ -1,16 +1,24 @@
-//import { withNavigationWatcher } from './contexts/navigation';
-
-
-import About from './pages/About';
+// import { withNavigationWatcher } from './contexts/navigation';
+import home from './pages/Home'
+import about from './pages/About'
+import activate from './pages/Activate'
+import { RegisterForm, LoginForm } from './components'
 
 const routes = [
 
- 
   {
+    menuposition: 'left',
+    name: 'Home',
+    path: '/home',
+    iconname:'bars',
+    component: home
+  },
+  {
+    menuposition: 'left',
     name: 'About',
-    path: '/about',
-    component: About
-  }
+    path: '/about', 
+    component: about
+  } 
 
 ];
 

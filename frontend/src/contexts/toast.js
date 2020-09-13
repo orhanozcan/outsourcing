@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext, useCallback } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import Toast from 'react-bootstrap/Toast'
 
 export const ToastContext = createContext({});
@@ -7,10 +7,14 @@ export function ToastProvider({ children }) {
     const [toastShow, setToastShow] = useState(false);
     const [toastMessage, setToastMessage] = useState('');
 
-    const toastMessageStack = useCallback((message) => {
+
+
+    const toastMessageStack = (message) => {
         setToastShow(true)
         setToastMessage(message)
-    }, []);
+    };
+
+
 
     const closeToast = () => {
         setToastShow(false)

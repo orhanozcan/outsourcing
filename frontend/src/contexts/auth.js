@@ -8,6 +8,9 @@ export function AuthProvider(props) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const toastMessageStack = useToast();
+
+  console.log(user)
+  console.log(loading)
   const login = useCallback(async (email, password) => {
     setLoading(true);
     const result = await loginRequest(email, password);

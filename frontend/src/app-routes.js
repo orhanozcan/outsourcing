@@ -1,4 +1,4 @@
-import { withNavigationWatcher } from './contexts/navigation';
+// import { withNavigationWatcher } from './contexts/navigation';
 import home from './pages/Home'
 import about from './pages/About'
 import activate from './pages/Activate'

@@ -1,6 +1,6 @@
 import user from '../utils/user';
 import axios from 'axios'
-import env from 'dotenv/config'
+// import env from 'dotenv/config'
 
 
 export async function registerRequest(email, password) {
