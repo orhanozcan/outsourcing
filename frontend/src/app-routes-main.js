@@ -18,7 +18,34 @@ const routes = [
     name: 'About',
     path: '/about', 
     component: about
+  },
+  {
+    menuposition: 'left',
+    name: 'Home',
+    path: '/home',
+    iconname:'bars',
+    component: home
+  },
+  {
+    menuposition: 'left',
+    name: 'About',
+    path: '/about', 
+    component: about
+  } ,
+  {
+    menuposition: 'left',
+    name: 'Home',
+    path: '/home',
+    iconname:'bars',
+    component: home
+  },
+  {
+    menuposition: 'left',
+    name: 'About',
+    path: '/about', 
+    component: about
   } 
+
 
 ];
 

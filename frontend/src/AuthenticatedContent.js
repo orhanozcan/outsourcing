@@ -1,7 +1,7 @@
 import routes from './app-routes-main';
 
 import React, { Component } from 'react'
-import { Menu, Icon } from 'semantic-ui-react'
+import { Menu, Icon, Segment, Header, Sidebar } from 'semantic-ui-react'
 
 
 import {
@@ -14,9 +14,13 @@ import {
 
 class MainNav extends Component {
 
-  state = { activeItem: 'Main' }
+  state = { activeItem: 'Main', visible: true }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  setVisible(bool) {
+    this.setState({ visible: bool })
+  }
+
 
   render() {
 
@@ -24,8 +28,22 @@ class MainNav extends Component {
     return (
 
       < Router >
-        <Menu vertical >
+        <Menu inverted  >
+          {/* buton gelicek ve menu açılacak */}
+          {/* sağ tarafta ise kullanıcı dropdownu ve logout sistemi */}
+        </Menu>
+        <Sidebar
+          as={Menu}
+          animation='push'
+          onHide={() => this.setVisible(false)}
+          inverted
+          vertical
+          visible={this.state.visible}
+          width='thin'
+        >
+
           <Menu.Item>
+
             <Menu.Header>Products</Menu.Header>
 
             <Menu.Menu>
@@ -48,19 +66,26 @@ class MainNav extends Component {
 
             </Menu.Menu>
           </Menu.Item>
-          
-        </Menu>
-        <Switch>
-          {routes.map(({ path, component }) => (
-            <Route
-              exact
-              key={path}
-              path={path}
-              component={component}
-            />
-          ))}
-          <Redirect to={'/main'} />
-        </Switch>
+
+        </Sidebar>
+
+        <Sidebar.Pusher>
+          <Segment >
+            <Switch>
+              {routes.map(({ path, component }) => (
+                <Route
+                  exact
+                  key={path}
+                  path={path}
+                  component={component}
+                />
+              ))}
+              <Redirect to={'/main'} />
+            </Switch>
+          </Segment>
+        </Sidebar.Pusher>
+
+
 
       </Router >
     )
